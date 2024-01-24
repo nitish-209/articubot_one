@@ -61,6 +61,9 @@ we need to move it forward half its length(x) and up by half its height(z)-->
             <origin xyz="0.15 0 0.075" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="chassis">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!-- LEFT WHEEL LINK-->
 
@@ -90,7 +93,9 @@ we need to move it forward half its length(x) and up by half its height(z)-->
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
-
+    <gazebo reference="left_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <!-- RIGHT WHEEL LINK-->
 
@@ -120,7 +125,9 @@ we need to move it forward half its length(x) and up by half its height(z)-->
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
-
+    <gazebo reference="right_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <!-- CASTER WHEEL LINK -->
 <!--the default position of child link is the origin of parent so we need to move caster to the front (almost 0.24m in +x)-->
@@ -146,5 +153,8 @@ we need to move it forward half its length(x) and up by half its height(z)-->
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
     </link>
+    <gazebo reference="caster_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
 </robot>
