@@ -155,6 +155,8 @@ we need to move it forward half its length(x) and up by half its height(z)-->
     </link>
     <gazebo reference="caster_wheel">
         <material>Gazebo/Blue</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
     </gazebo>
 
 </robot>
