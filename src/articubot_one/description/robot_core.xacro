@@ -147,9 +147,4 @@ we need to move it forward half its length(x) and up by half its height(z)-->
         </xacro:inertial_sphere>
     </link>
 
-
-
-
-
-
 </robot>
