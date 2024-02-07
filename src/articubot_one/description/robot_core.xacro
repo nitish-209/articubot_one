@@ -24,12 +24,14 @@
         <color rgba="0 0 0 1"/>
     </material>
 
+    <material name="red">
+        <color rgba="1 0 0 1"/>
+    </material>
 
     <!-- BASE LINK -->
 <!--Creating first link the ros standard for first link is "base_link"-->
-    <link name="base_link">
-
-    </link>
+    <link name="base_link"></link>
+    
 
     <!-- CHASSIS LINK -->
 <!--Chassis is box which is 300mm 300mm 150mm urdf uses measurements in meters-->
@@ -41,7 +43,7 @@
     </joint>
 
 <!--Creating the chassis link which we joined to the base_link above using a fixed joint-->
-<!--By default the chassis link will bw centered around the chassis origin so we need to move the visuals of box
+<!--By default the chassis link will be centered around the chassis origin so we need to move the visuals of box
 we need to move it forward half its length(x) and up by half its height(z)-->
     <link name="chassis">
         <visual>
@@ -61,9 +63,11 @@ we need to move it forward half its length(x) and up by half its height(z)-->
             <origin xyz="0.15 0 0.075" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
+
     <gazebo reference="chassis">
         <material>Gazebo/White</material>
     </gazebo>
+
 
     <!-- LEFT WHEEL LINK-->
 
@@ -93,9 +97,11 @@ we need to move it forward half its length(x) and up by half its height(z)-->
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+
     <gazebo reference="left_wheel">
         <material>Gazebo/Black</material>
     </gazebo>
+
 
     <!-- RIGHT WHEEL LINK-->
 
@@ -125,11 +131,14 @@ we need to move it forward half its length(x) and up by half its height(z)-->
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+
     <gazebo reference="right_wheel">
         <material>Gazebo/Black</material>
     </gazebo>
 
+
     <!-- CASTER WHEEL LINK -->
+    
 <!--the default position of child link is the origin of parent so we need to move caster to the front (almost 0.24m in +x)-->
     <joint name="caster_wheel_joint" type="fixed">
         <parent link="chassis"/>
@@ -153,6 +162,7 @@ we need to move it forward half its length(x) and up by half its height(z)-->
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
     </link>
+
     <gazebo reference="caster_wheel">
         <material>Gazebo/Blue</material>
         <mu1 value="0.001"/>
